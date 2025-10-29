@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- HTML-документ - основной файл веб-страницы -->
+<html lang="ru">
+<!-- Контейнер <html> - корневой элемент документа, lang="ru" указывает язык содержимого -->
+<head>
+    <!-- Контейнер <head> - для метаданных и подключения ресурсов -->
+    <meta charset="UTF-8">
+    <!-- Кодировка символов UTF-8 для поддержки кириллицы и специальных символов -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport для корректного отображения на мобильных устройствах -->
+    <title>SkiPro Training - Главная</title>
+    <!-- Тег <title> - заголовок вкладки браузера -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключение внешной каскадной таблицы стилей -->
+</head>
+<body>
+    <!-- Контейнер <body> - видимое содержимое страницы -->
+    
+    <!-- Шапка сайта (слой) -->
+    <header>
+        <!-- Блок логотипа -->
+        <div class="logo">
+            <!-- Контейнер для логотипа -->
+            <img src="images/logo_skipro.png" alt="SkiPro Training Logo">
+            <!-- Изображение логотипа с альтернативным текстом -->
+        </div>
+        <nav>
+            <!-- Контейнер для навигационного меню -->
+            <ul>
+                <!-- Неупорядоченный список для навигационных ссылок -->
+                <li><a href="index.html">Главная</a></li>
+                <!-- Элемент списка с гиперссылкой -->
+                <li><a href="workouts.html">Тренировки</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <!-- Гиперссылка с якорем (символ #) для внутренней навигации -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Главный содержательный раздел документа -->
+        <section class="hero">
+            <!-- Секция-герой с основным заголовком и описанием -->
+            <h1>SkiPro Training: Ваш путь к мастерству</h1>
+            <!-- Главный заголовок первого уровня -->
+            <p>Профессиональные тренировки по горнолыжному спорту и функциональной подготовке для достижения лучших результатов на склонах</p>
+            <!-- Абзац текста с описанием -->
+        </section>
+        <!-- Секция с информацией о курортах -->
+        <section class="resorts-weather">
+            <h2>Погода на горнолыжных курортах в январе</h2>
+            <div class="resorts-grid">
+                <!-- Манжерок -->
+                <div class="resort-card">
+                    <div class="resort-image">
+                        <img src="images/resort-manzherok.jpg" alt="Горнолыжный курорт Манжерок">
+                    </div>
+                    <div class="resort-content">
+                        <div class="resort-header">
+                            <h3>Манжерок</h3>
+                            <div class="temperature">-15°C</div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-item">
+                                <span class="label">Погода:</span>
+                                <span class="value">Снежно, солнечно</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Снежный покров:</span>
+                                <span class="value">120-150 см</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Влажность:</span>
+                                <span class="value">75%</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Ветер:</span>
+                                <span class="value">3 м/с</span>
+                            </div>
+                            <div class="weather-item conditions">
+                                <span class="label">Условия для катания:</span>
+                                <span class="value excellent">Идеальные</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Кировск -->
+                <div class="resort-card">
+                    <div class="resort-image">
+                        <img src="images/resort-kirovsk.jpg" alt="Горнолыжный курорт Кировск">
+                    </div>
+                    <div class="resort-content">
+                        <div class="resort-header">
+                            <h3>Кировск</h3>
+                            <div class="temperature">-12°C</div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-item">
+                                <span class="label">Погода:</span>
+                                <span class="value">Пасмурно, снегопад</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Снежный покров:</span>
+                                <span class="value">180-220 см</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Влажность:</span>
+                                <span class="value">85%</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Ветер:</span>
+                                <span class="value">5 м/с</span>
+                            </div>
+                            <div class="weather-item conditions">
+                                <span class="label">Условия для катания:</span>
+                                <span class="value good">Отличные</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Сахалин -->
+                <div class="resort-card">
+                    <div class="resort-image">
+                        <img src="images/resort-sakhalin.jpg" alt="Горнолыжный курорт Сахалин">
+                    </div>
+                    <div class="resort-content">
+                        <div class="resort-header">
+                            <h3>Сахалин</h3>
+                            <div class="temperature">-10°C</div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-item">
+                                <span class="label">Погода:</span>
+                                <span class="value">Ветрено, снег</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Снежный покров:</span>
+                                <span class="value">100-130 см</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Влажность:</span>
+                                <span class="value">80%</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Ветер:</span>
+                                <span class="value">8 м/с</span>
+                            </div>
+                            <div class="weather-item conditions">
+                                <span class="label">Условия для катания:</span>
+                                <span class="value good">Хорошие</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Камчатка -->
+                <div class="resort-card">
+                    <div class="resort-image">
+                        <img src="images/resort-kamchatka.jpg" alt="Горнолыжный курорт Камчатка">
+                    </div>
+                    <div class="resort-content">
+                        <div class="resort-header">
+                            <h3>Камчатка</h3>
+                            <div class="temperature">-8°C</div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-item">
+                                <span class="label">Погода:</span>
+                                <span class="value">Переменная облачность</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Снежный покров:</span>
+                                <span class="value">200-250 см</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Влажность:</span>
+                                <span class="value">70%</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Ветер:</span>
+                                <span class="value">4 м/с</span>
+                            </div>
+                            <div class="weather-item conditions">
+                                <span class="label">Условия для катания:</span>
+                                <span class="value excellent">Превосходные</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Абзаково -->
+                <div class="resort-card">
+                    <div class="resort-image">
+                        <img src="images/resort-abzakovo.jpg" alt="Горнолыжный курорт Абзаково">
+                    </div>
+                    <div class="resort-content">
+                        <div class="resort-header">
+                            <h3>Абзаково</h3>
+                            <div class="temperature">-18°C</div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-item">
+                                <span class="label">Погода:</span>
+                                <span class="value">Ясно, морозно</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Снежный покров:</span>
+                                <span class="value">140-170 см</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Влажность:</span>
+                                <span class="value">65%</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="label">Ветер:</span>
+                                <span class="value">2 м/с</span>
+                            </div>
+                            <div class="weather-item conditions">
+                                <span class="label">Условия для катания:</span>
+                                <span class="value excellent">Отличные</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Секция галереи с CSS Grid -->
+        <section id="gallery" class="gallery">
+            <!-- Якорь для навигации (id="gallery") -->
+            <h2>Наш подход к тренировкам</h2>
+            <!-- Заголовок второго уровня -->
+            
+            <div class="gallery-grid">
+                <!-- Новый контейнер для сетки изображений -->
+                <div class="gallery-item">
+                    <img src="images/img1.jpg" alt="Тренировка на склоне" class="gallery-img">
+                    <div class="gallery-caption">Тренировка на склоне</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img2.jpg" alt="Индивидуальное занятие" class="gallery-img">
+                    <div class="gallery-caption">Индивидуальное занятие</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img3.jpg" alt="ОФП в зале" class="gallery-img">
+                    <div class="gallery-caption">ОФП в зале</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img4.jpg" alt="Горнолыжный инвентарь" class="gallery-img">
+                    <div class="gallery-caption">Горнолыжный инвентарь</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img5.jpg" alt="Покорение вершины" class="gallery-img">
+                    <div class="gallery-caption">Покорение вершины</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img6.jpg" alt="Групповая тренировка" class="gallery-img">
+                    <div class="gallery-caption">Групповая тренировка</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img7.jpg" alt="Техника карвинга" class="gallery-img">
+                    <div class="gallery-caption">Техника карвинга</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img8.jpg" alt="Горный пейзаж" class="gallery-img">
+                    <div class="gallery-caption">Горный пейзаж</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img9.jpg" alt="Тренировка баланса" class="gallery-img">
+                    <div class="gallery-caption">Тренировка баланса</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img10.jpg" alt="Тренировка скорости" class="gallery-img">
+                    <div class="gallery-caption">Тренировка скорости</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img11.jpg" alt="Соревнования" class="gallery-img">
+                    <div class="gallery-caption">Соревнования</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/img12.jpg" alt="Наша команда" class="gallery-img">
+                    <div class="gallery-caption">Наша команда</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Подвал сайта -->
+        <p>&copy; 2023 SkiPro Training. Все права защищены.</p>
+        <!-- Знак авторского права и информация об правах -->
+    </footer>
+
+    <!-- Подключение внешнего JavaScript файла -->
+    <script src="script.js"></script>
+</body>
+</html>
