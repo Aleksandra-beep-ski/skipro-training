@@ -409,41 +409,54 @@ function sendEmail(to, subject, body) {
     console.log('Тема:', subject);
     console.log('Текст:', body);
     
-    // Показываем красивое уведомление
-    showNotification(`✓ Email отправлен на: ${to}`, 'success');
-    
-    // Для демонстрации показываем детали письма
-    setTimeout(() => {
-        const modal = createModal(`
-            <h2>📧 Email отправлен!</h2>
-            <div class="email-demo">
-                <div class="email-info">
-                    <p><strong>Получатель:</strong> ${to}</p>
-                    <p><strong>Тема:</strong> ${subject}</p>
-                </div>
-                <div class="email-content">
-                    <h3>Содержание письма:</h3>
-                    <div class="email-text">${body.replace(/\n/g, '<br>')}</div>
-                </div>
-                <div class="email-note">
-                    <p><em>В рабочей системе это письмо было бы автоматически доставлено получателю</em></p>
-                </div>
-                <button onclick="closeModal()" class="btn">Понятно</button>
+    // Сразу показываем письмо в красивом модальном окне
+    const modal = createModal(`
+        <h2>📧 Email готов к отправке!</h2>
+        <div class="email-demo">
+            <div class="email-info">
+                <p><strong>Получатель:</strong> ${to}</p>
+                <p><strong>Тема:</strong> ${subject}</p>
             </div>
-        `);
-    }, 500);
-    
-    // Также предлагаем реальную отправку через почтовый клиент
-    setTimeout(() => {
-        if (confirm('Хотите также открыть это письмо в вашем почтовом клиенте?')) {
-            const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.open(mailtoLink, '_blank');
-        }
-    }, 2000);
+            <div class="email-content">
+                <h3>Содержание письма:</h3>
+                <div class="email-text">${body.replace(/\n/g, '<br>')}</div>
+            </div>
+            <div class="email-actions">
+                <button onclick="sendRealEmail('${to}', '${subject}', \`${body.replace(/'/g, "\\'")}\`)" class="btn" style="margin-bottom: 10px;">
+                    📨 Открыть в почтовом клиенте
+                </button>
+                <button onclick="closeModal()" class="btn" style="background: #6c757d;">
+                    ✋ Только посмотреть
+                </button>
+            </div>
+            <div class="email-note">
+                <p><em>В рабочей системе это письмо отправлялось бы автоматически</em></p>
+            </div>
+        </div>
+    `);
     
     return true;
 }
-
+// функция для реальной отправки через почтовый клиент
+// вызывается только по явному клику пользователя
+function sendRealEmail(to, subject, body) {
+    const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Создаем ссылку и кликаем по ней - это разрешено браузером
+    const tempLink = document.createElement('a');
+    tempLink.href = mailtoLink;
+    tempLink.target = '_blank'; // Открываем в новой вкладке
+    tempLink.style.display = 'none';
+    document.body.appendChild(tempLink);
+    tempLink.click();
+    document.body.removeChild(tempLink);
+    
+    // Закрываем модальное окно
+    closeModal();
+    
+    // Показываем инструкцию
+    showNotification('✓ Почтовый клиент открыт! Нажмите "Отправить" чтобы отправить письмо.', 'success');
+}
 
 // Проверка предстоящих тренировок и отправка напоминаний
 function checkUpcomingTrainings() {
