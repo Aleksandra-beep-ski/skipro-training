@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- HTML-документ - страница контактов -->
+<html lang="ru">
+<!-- Корневой элемент с указанием языка -->
+<head>
+    <!-- Секция метаданных -->
+    <meta charset="UTF-8">
+    <!-- Установка кодировки UTF-8 для поддержки кириллицы -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Адаптивный viewport для корректного отображения на мобильных устройствах -->
+    <title>Контакты - SkiPro Training</title>
+    <!-- Заголовок страницы в браузере -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключение общего файла стилей -->
+</head>
+<body>
+    <!-- Тело документа -->
+    <header>
+        <!-- Шапка сайта -->
+        <div class="logo">
+            <!-- Контейнер логотипа -->
+            <img src="images/logo_skipro.png" alt="SkiPro Training Logo">
+            <!-- Логотип с альтернативным текстом для доступности -->
+        </div>
+        <nav>
+            <!-- Навигационное меню -->
+            <ul>
+                <!-- Список навигационных ссылок -->
+                <li><a href="index.html">Главная</a></li>
+                <!-- Ссылка на главную страницу -->
+                <li><a href="workouts.html">Тренировки</a></li>
+                <!-- Ссылка на страницу тренировок -->
+                <li><a href="contacts.html">Контакты</a></li>
+                <!-- Активная ссылка на текущую страницу -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Основное содержимое страницы -->
+        <h1>Наши контакты</h1>
+        <!-- Главный заголовок страницы -->
+        
+        <!-- Слоган компании -->
+        <p class="slogan"><strong>Наша философия:</strong> Не бывает плохих лыжников - бывают неправильные тренировки!</p>
+        <!-- Слоган с выделением жирным шрифтом -->
+
+        <!-- Контактная информация -->
+        <div class="contact-info">
+            <!-- Контейнер для контактной информации -->
+            <h2>Контакты и расписание</h2>
+            <!-- Заголовок раздела -->
+            <p><strong>Тренировочный центр:</strong> Ленинградская область, Выборгский район, поселок Коробицыно (горнолыжный курорт "Снежный")</p>
+            <!-- Адрес тренировочного центра -->
+            <p><strong>Зал функциональной подготовки:</strong> Ленинградская область, поселок Мичуринское, спортбаза Мичуринское</p>
+            <!-- Адрес зала подготовки -->
+            <p><strong>Телефон:</strong> +7 981 891 93 55</p>
+            <!-- Телефон для связи -->
+            <p><strong>Email:</strong> sasha.zharkova00@mail.ru</p>
+            <!-- Электронная почта -->
+            <p><strong>Режим работы:</strong> Ежедневно 7:00-23:00 (индивидуальное расписание)</p>
+            <!-- График работы -->
+            <p><strong>Сезонность:</strong> Круглогодичный тренировочный процесс</p>
+            <!-- Информация о сезонности работы -->
+        </div>
+
+        <!-- форма обратной связи -->
+        <div class="contact-info">
+            <h2>Форма обратной связи</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Ваше имя:</label>
+                    <input type="text" id="contactName" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email:</label>
+                    <input type="email" id="contactEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Сообщение:</label>
+                    <textarea id="contactMessage" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить сообщение</button>
+            </form>
+        </div>
+        
+        <!-- Карта проезда -->
+        <div class="map">
+            <!-- Контейнер для карты -->
+            <h2>Мы на карте - Горнолыжный курорт "Снежный"</h2>
+            <!-- Заголовок карты -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1269.2345678901234!2d29.764107!3d60.52197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjDCsDMxJzE5LjEiTiAyOcKwNDUnNTAuOCJF!5e0!3m2!1sru!2sru!4v1234567890"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                aria-label="Карта горнолыжного курорта Снежный в Коробицыно">
+                <!-- Встроенная карта Google Maps с параметрами -->
+            </iframe>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Подвал сайта -->
+        <p>&copy; 2025 SkiPro Training. Все права защищены.</p>
+        <!-- Копирайт и юридическая информация -->
+    </footer>
+
+    <!-- Подключение внешнего JavaScript файла -->
+    <script src="script.js"></script>
+</body>
+</html>
