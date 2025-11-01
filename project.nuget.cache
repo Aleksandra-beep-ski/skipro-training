@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "PbjpFrQ6PqE=",
+  "success": true,
+  "projectFilePath": "/Users/aleksandrazharkova/Documents/MyTetris/MyTetris.csproj",
+  "expectedPackageFiles": [
+    "/Users/aleksandrazharkova/.nuget/packages/spectre.console/0.49.1/spectre.console.0.49.1.nupkg.sha512"
+  ],
+  "logs": []
+}
