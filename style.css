@@ -1,0 +1,1237 @@
+/* SkiPro Training - обновленные стили v2.0 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #283a4d;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+    min-height: 100vh;
+}
+
+/* Шапка сайта */
+header {
+    background: linear-gradient(135deg, #1a6fa4 0%, #155d87 100%);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(26, 111, 164, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Навигация */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Главная секция */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a6fa4 0%, #ff6b9d 100%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(26, 111, 164, 0.3);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Карточки курортов */
+.resorts-weather {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 3px solid #ffd6e0;
+}
+
+.resorts-weather h2 {
+    text-align: center;
+    color: #1a6fa4;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.resorts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.resort-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #ffd6e0;
+    position: relative;
+}
+
+.resort-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(26, 111, 164, 0.2);
+    border-color: #1a6fa4;
+}
+
+.resort-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.resort-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.resort-card:hover .resort-image img {
+    transform: scale(1.1);
+}
+
+.resort-content {
+    padding: 1.5rem;
+}
+
+.resort-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.resort-header h3 {
+    color: #1a6fa4;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.temperature {
+    background: linear-gradient(135deg, #ff6b9d, #ff4a8d);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.weather-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.weather-item:last-child {
+    border-bottom: none;
+}
+
+.weather-item .label {
+    color: #666;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.weather-item .value {
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: right;
+}
+
+.weather-item.conditions {
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    border: none;
+}
+
+.weather-item.conditions .label {
+    color: #1a6fa4;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.value.excellent {
+    color: #27ae60;
+    font-weight: 700;
+}
+
+.value.good {
+    color: #f39c12;
+    font-weight: 700;
+}
+
+/* Галерея */
+.gallery {
+    margin: 4rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.gallery h2 {
+    text-align: center;
+    color: #1a6fa4;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 4/3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(26, 111, 164, 0.9));
+    color: white;
+    padding: 1.5rem 1rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* Карточки тренировок */
+#trainings-container {
+    margin: 2rem 0;
+}
+
+.product-card {
+    background: white;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-left: 6px solid #ff6b9d;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #1a6fa4, #ff6b9d);
+}
+
+.product-card h2 {
+    color: #1a6fa4;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.product-card img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #ffd6e0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.price {
+    color: #1a6fa4;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffd6e0, #ffb6c1);
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+}
+
+/* Кнопки */
+.btn, .booking-btn {
+    background: linear-gradient(135deg, #ff6b9d, #ff4a8d);
+    color: white;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover, .booking-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+    background: linear-gradient(135deg, #ff4a8d, #ff2a7a);
+}
+
+/* Внутренняя навигация */
+.internal-nav {
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    text-align: center;
+    border: 2px solid #ffd6e0;
+}
+
+.internal-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.internal-nav a {
+    color: #1a6fa4;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.internal-nav a:hover {
+    background: #1a6fa4;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 111, 164, 0.3);
+}
+
+/* Контакты */
+.slogan {
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1a6fa4;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #ffd6e0, #ffb6c1);
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+}
+
+.contact-info {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 2px solid #ffd6e0;
+}
+
+.contact-info h2 {
+    color: #1a6fa4;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.contact-info strong {
+    color: #1a6fa4;
+}
+
+/* Формы */
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: #1a6fa4;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ffd6e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fff9fa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1a6fa4;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 111, 164, 0.1);
+}
+
+/* Календарь */
+.training-calendar {
+    margin: 3rem 0;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 20px;
+    border: 3px solid #ffd6e0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.training-calendar h2 {
+    text-align: center;
+    color: #1a6fa4;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+.calendar-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.calendar-header h3 {
+    color: #1a6fa4;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.calendar-nav-btn {
+    background: linear-gradient(135deg, #ff6b9d, #ff4a8d);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(255, 107, 157, 0.3);
+}
+
+.calendar-nav-btn:hover {
+    background: linear-gradient(135deg, #ff4a8d, #ff2a7a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.calendar-day {
+    background: white;
+    border: 2px solid #f0f0f0;
+    padding: 1rem;
+    min-height: 100px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.calendar-day.header {
+    background: linear-gradient(135deg, #1a6fa4, #155d87);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    min-height: auto;
+    padding: 1rem 0.5rem;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.calendar-day.other-month {
+    background: #f8f9fa;
+    color: #ccc;
+    border-color: #e0e0e0;
+}
+
+.calendar-day.has-training {
+    background: #fff9fa;
+    border-color: #ffd6e0;
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.3);
+}
+
+.calendar-day:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #1a6fa4;
+}
+
+.training-item {
+    background: linear-gradient(135deg, #ff6b9d, #ff4a8d);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    margin: 0.2rem 0;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    border: none;
+    box-shadow: 0 2px 5px rgba(255, 107, 157, 0.3);
+}
+
+/* Забронированные тренировки */
+.booked-trainings {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid #ffd6e0;
+}
+
+.booked-trainings h3 {
+    color: #1a6fa4;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.booking-item {
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border-left: 5px solid #1a6fa4;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.booking-item.my-booking {
+    border-left-color: #ff6b9d;
+    background: linear-gradient(135deg, #fff9fa, #ffeef1);
+}
+
+.booking-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.booking-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}
+
+.training-type {
+    font-weight: bold;
+    color: #1a6fa4;
+    font-size: 1.1rem;
+}
+
+.client-info {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.booking-notes {
+    margin: 0.5rem 0 0 0;
+    padding: 0.8rem;
+    background: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #666;
+    width: 100%;
+    border-left: 3px solid #ffd6e0;
+}
+
+.btn-cancel {
+    background: linear-gradient(135deg, #ff6b9d, #ff4a8d);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(255, 107, 157, 0.3);
+}
+
+.btn-cancel:hover {
+    background: linear-gradient(135deg, #ff4a8d, #ff2a7a);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(255, 107, 157, 0.4);
+}
+
+.no-bookings {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 3rem;
+    font-size: 1.1rem;
+}
+
+/* Кнопка авторизации */
+.auth-btn {
+    background: linear-gradient(135deg, #ffd6e0, #ffb6c1);
+    color: #1a6fa4;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 10px rgba(255, 182, 193, 0.3);
+}
+
+.auth-btn:hover {
+    background: linear-gradient(135deg, #1a6fa4, #155d87);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 111, 164, 0.4);
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    background: white;
+    margin: 2% auto;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    position: relative;
+    animation: slideIn 0.3s ease;
+    border: 3px solid #ffd6e0;
+}
+
+/* Специальные стили для форм регистрации/логина */
+.modal-content.auth-form {
+    max-width: 450px;
+    max-height: 85vh;
+}
+
+.modal-content h2 {
+    color: #1a6fa4;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+/* Формы в модальных окнах */
+.modal-content .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.modal-content .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a6fa4;
+    font-size: 0.9rem;
+}
+
+.modal-content .form-group input,
+.modal-content .form-group select,
+.modal-content .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ffd6e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: #fff9fa;
+}
+
+.modal-content .form-group input:focus,
+.modal-content .form-group select:focus,
+.modal-content .form-group textarea:focus {
+    outline: none;
+    border-color: #1a6fa4;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(26, 111, 164, 0.1);
+}
+
+/* Кнопки в модальных окнах */
+.modal-content .btn {
+    background: linear-gradient(135deg, #ff6b9d, #ff4a8d);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.modal-content .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+    background: linear-gradient(135deg, #ff4a8d, #ff2a7a);
+}
+
+/* Ссылки в модальных окнах */
+.modal-content a {
+    color: #1a6fa4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.modal-content a:hover {
+    color: #ff6b9d;
+    text-decoration: underline;
+}
+
+.close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #1a6fa4;
+    transition: all 0.3s ease;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close:hover {
+    color: #ff6b9d;
+    background-color: #fff5f7;
+    transform: rotate(90deg);
+}
+
+/* Email компактный */
+.email-compact {
+    max-width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-compact h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #1a6fa4;
+}
+
+.email-header {
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #1a6fa4;
+}
+
+.email-header p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.email-scrollable {
+    flex: 1;
+    overflow-y: auto;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    max-height: 40vh;
+    background: white;
+}
+
+.email-preview {
+    padding: 1.5rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+.email-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.btn-send {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    padding: 1rem;
+}
+
+.btn-send:hover {
+    background: linear-gradient(135deg, #218838, #1e9e8a);
+}
+
+.btn-cancel {
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    padding: 1rem;
+}
+
+.btn-cancel:hover {
+    background: linear-gradient(135deg, #5a6268, #495056);
+}
+
+/* Уведомления */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1.2rem 1.8rem;
+    border-radius: 12px;
+    color: white;
+    z-index: 1001;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    font-weight: bold;
+    max-width: 350px;
+    border-left: 5px solid;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #ffb6c1, #ff91a4);
+    border-left-color: #ff6b9d;
+    color: #8b4513;
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    border-left-color: #b71c1c;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from { 
+        opacity: 1;
+    }
+    to { 
+        opacity: 0;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+.slide-in {
+    animation: slideIn 0.4s ease-out;
+}
+
+/* Состояние загрузки */
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Подвал */
+footer {
+    background: linear-gradient(135deg, #1a6fa4, #155d87);
+    color: white;
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 4rem;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 20px rgba(26, 111, 164, 0.3);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+    }
+    
+    header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .resorts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .modal-content {
+        margin: 5% auto;
+        padding: 1.5rem;
+        width: 95%;
+        max-width: 95%;
+    }
+    
+    .modal-content.auth-form {
+        max-width: 95%;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .modal-content .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .modal-content .form-group input,
+    .modal-content .form-group select,
+    .modal-content .form-group textarea {
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+    
+    .calendar-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4px;
+        padding: 1rem;
+    }
+    
+    .calendar-day {
+        min-height: 80px;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .booking-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .booking-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .product-card {
+        padding: 1.5rem;
+    }
+    
+    .product-card img {
+        max-width: 80%;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendar-day {
+        min-height: 70px;
+        font-size: 0.7rem;
+    }
+    
+    .training-item {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .modal-content {
+        margin: 2% auto;
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .close {
+        right: 1rem;
+        top: 0.5rem;
+        font-size: 1.8rem;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Улучшения для доступности */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Подсветка фокуса для клавиатурной навигации */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #1a6fa4;
+    outline-offset: 2px;
+}
+
+/* Улучшение читаемости */
+@media (prefers-contrast: high) {
+    .hero {
+        background: #1a6fa4;
+    }
+    
+    .btn, .booking-btn {
+        background: #ff6b9d;
+    }
+}
